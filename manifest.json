@@ -1,0 +1,73 @@
+{
+    "id": "texsor",
+    "name": "Texsor Portal",
+    "packaging_format": 1,
+    "description": {
+        "en": "Texsor Portal"
+    },
+    "version": "1.0~ynh1",
+    "url": "https://github.com/deifyinfocommsolutions/texsor_dfy",
+    "license": "GPL-3.0-only",
+    "maintainer": {
+        "name": "Deify Infocomm Solutions",
+        "email": "support@deifysolutions.com"
+    },
+    "requirements": {
+        "yunohost": ">= 3.2.0"
+    },
+    "multi_instance": true,
+    "services": [
+        "nginx",
+        "php7.0-fpm"
+    ],
+    "arguments": {
+        "install" : [
+            {
+                "name": "domain",
+                "type": "domain",
+                "ask": {
+                    "en": "Choose a domain for your Webapp",
+                    "fr": "Choisissez un domaine pour votre Webapp"
+                },
+                "example": "domain.org"
+            },
+            {
+                "name": "path",
+                "type": "path",
+                "ask": {
+                    "en": "Choose a path for your Webapp",
+                    "fr": "Choisissez un chemin pour votre Webapp"
+                },
+                "example": "/site",
+                "default": "/site"
+            },
+            {
+                "name": "password",
+                "type": "password",
+                "ask": {
+                    "en": "Set the password for the SFTP access. ≥ 5 character",
+                    "fr": "Définissez le mot de passe pour l'accès SFTP. ≥ cinq charactères"
+                },
+                "example": "myreallystrengthpassword"
+            },
+            {
+                "name": "is_public",
+                "type": "boolean",
+                "ask": {
+                    "en": "Is it a public website?",
+                    "fr": "Est-ce un site public ?"
+                },
+                "default": true
+            },
+            {
+                "name": "with_mysql",
+                "type": "boolean",
+                "ask": {
+                    "en": "Do you need a MySQL database?",
+                    "fr": "Avez-vous besoin d'une base de données MySQL ?"
+                },
+                "default": false
+            }
+        ]
+    }
+}
